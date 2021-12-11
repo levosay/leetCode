@@ -59,13 +59,26 @@
 
 
 
+// const twoSum = (nums, target) => {
+//   return nums.map((item, index, arr) => {
+//     if (item + arr[index + 1] === target) {
+//       return [index, index + 1]
+//     }
+//     return false
+//   }).filter(a => a)
+// }
+//
+//
+// console.log(twoSum([2,7,11,15], 9))
+
+
 const twoSum = (nums, target) => {
-  return nums.map((item, index, arr) => {
-    if (item + arr[index + 1] === target) {
-      return [index, index + 1]
+  return nums ? nums.reduce((acc, item, index) => {
+    if (item + nums[index + 1] === target) {
+      acc.push(index, index + 1)
     }
-    return false
-  }).filter(a => a)
+    return acc
+  }, []) : []
 }
 
 
