@@ -72,14 +72,73 @@
 // console.log(twoSum([2,7,11,15], 9))
 
 
-const twoSum = (nums, target) => {
-  return nums ? nums.reduce((acc, item, index) => {
-    if (item + nums[index + 1] === target) {
-      acc.push(index, index + 1)
-    }
-    return acc
-  }, []) : []
+// const twoSum = (nums, target) => {
+//   return nums ? nums.reduce((acc, item, index) => {
+//     if (item + nums[index + 1] === target) {
+//       acc.push(index, index + 1)
+//     }
+//     return acc
+//   }, []) : []
+// }
+//
+//
+// console.log(twoSum([2,7,11,15], 9))
+
+
+const decodeMorse = (morseCode) =>{
+  const alphabet = {
+    "-----":"0",
+    ".----":"1",
+    "..---":"2",
+    "...--":"3",
+    "....-":"4",
+    ".....":"5",
+    "-....":"6",
+    "--...":"7",
+    "---..":"8",
+    "----.":"9",
+    ".-":"a",
+    "-...":"b",
+    "-.-.":"c",
+    "-..":"d",
+    ".":"e",
+    "..-.":"f",
+    "--.":"g",
+    "....":"h",
+    "..":"i",
+    ".---":"j",
+    "-.-":"k",
+    ".-..":"l",
+    "--":"m",
+    "-.":"n",
+    "---":"o",
+    ".--.":"p",
+    "--.-":"q",
+    ".-.":"r",
+    "...":"s",
+    "-":"t",
+    "..-":"u",
+    "...-":"v",
+    ".--":"w",
+    "-..-":"x",
+    "-.--":"y",
+    "--..":"z",
+    "/":" ",
+    "-.-.--":"!",
+    ".-.-.-":".",
+    "--..--":","
+  };
+  const messageConverted = [];
+
+  morseCode.split("   ").map(function (word) {
+    word.split(" ").map(function (letter) {
+      messageConverted.push(alphabet[letter])
+    })
+    messageConverted.push(" ")
+  })
+
+  return messageConverted.join("").toUpperCase().trim()
 }
 
 
-console.log(twoSum([2,7,11,15], 9))
+console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
