@@ -85,60 +85,81 @@
 // console.log(twoSum([2,7,11,15], 9))
 
 
-const decodeMorse = (morseCode) =>{
-  const alphabet = {
-    "-----":"0",
-    ".----":"1",
-    "..---":"2",
-    "...--":"3",
-    "....-":"4",
-    ".....":"5",
-    "-....":"6",
-    "--...":"7",
-    "---..":"8",
-    "----.":"9",
-    ".-":"a",
-    "-...":"b",
-    "-.-.":"c",
-    "-..":"d",
-    ".":"e",
-    "..-.":"f",
-    "--.":"g",
-    "....":"h",
-    "..":"i",
-    ".---":"j",
-    "-.-":"k",
-    ".-..":"l",
-    "--":"m",
-    "-.":"n",
-    "---":"o",
-    ".--.":"p",
-    "--.-":"q",
-    ".-.":"r",
-    "...":"s",
-    "-":"t",
-    "..-":"u",
-    "...-":"v",
-    ".--":"w",
-    "-..-":"x",
-    "-.--":"y",
-    "--..":"z",
-    "/":" ",
-    "-.-.--":"!",
-    ".-.-.-":".",
-    "--..--":","
-  };
-  const messageConverted = [];
+// const decodeMorse = (morseCode) =>{
+//   const alphabet = {
+//     "-----":"0",
+//     ".----":"1",
+//     "..---":"2",
+//     "...--":"3",
+//     "....-":"4",
+//     ".....":"5",
+//     "-....":"6",
+//     "--...":"7",
+//     "---..":"8",
+//     "----.":"9",
+//     ".-":"a",
+//     "-...":"b",
+//     "-.-.":"c",
+//     "-..":"d",
+//     ".":"e",
+//     "..-.":"f",
+//     "--.":"g",
+//     "....":"h",
+//     "..":"i",
+//     ".---":"j",
+//     "-.-":"k",
+//     ".-..":"l",
+//     "--":"m",
+//     "-.":"n",
+//     "---":"o",
+//     ".--.":"p",
+//     "--.-":"q",
+//     ".-.":"r",
+//     "...":"s",
+//     "-":"t",
+//     "..-":"u",
+//     "...-":"v",
+//     ".--":"w",
+//     "-..-":"x",
+//     "-.--":"y",
+//     "--..":"z",
+//     "/":" ",
+//     "-.-.--":"!",
+//     ".-.-.-":".",
+//     "--..--":","
+//   };
+//   const messageConverted = [];
+//
+//   morseCode.split("   ").map(function (word) {
+//     word.split(" ").map(function (letter) {
+//       messageConverted.push(alphabet[letter])
+//     })
+//     messageConverted.push(" ")
+//   })
+//
+//   return messageConverted.join("").toUpperCase().trim()
+// }
+//
+//
+// console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
 
-  morseCode.split("   ").map(function (word) {
-    word.split(" ").map(function (letter) {
-      messageConverted.push(alphabet[letter])
-    })
-    messageConverted.push(" ")
+
+const findMissingLetter = (array) => {
+  let arr_en
+  if (array[0] === array[0].toUpperCase()) {
+    arr_en = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  } else {
+    arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  }
+  let result = []
+  arr_en.forEach((item, index) => {
+    if (item === array[0]) {
+      return result = arr_en.splice(index, array.length + 1)
+    }
   })
 
-  return messageConverted.join("").toUpperCase().trim()
+  return result.filter((item, index) => item !== array[index])[0]
 }
 
 
-console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
+console.log(findMissingLetter(['a','b','c','d','f']))
