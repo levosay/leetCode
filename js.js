@@ -144,21 +144,33 @@
 // console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
 
 
-const findMissingLetter = (array) => {
-  let arr_en
-  if (array[0] === array[0].toUpperCase()) {
-    arr_en = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-  } else {
-    arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-  }
-  let result = []
-  arr_en.forEach((item, index) => {
-    if (item === array[0]) {
-      return result = arr_en.splice(index, array.length + 1)
-    }
-  })
+// const findMissingLetter = (array) => {
+//   let arr_en
+//   if (array[0] === array[0].toUpperCase()) {
+//     arr_en = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+//   } else {
+//     arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+//   }
+//   let result = []
+//   arr_en.forEach((item, index) => {
+//     if (item === array[0]) {
+//       return result = arr_en.splice(index, array.length + 1)
+//     }
+//   })
+//
+//   return result.filter((item, index) => item !== array[index])[0]
+// }
+//
+//
+// console.log(findMissingLetter(['a','b','c','d','f']))
 
-  return result.filter((item, index) => item !== array[index])[0]
+const findMissingLetter = (array) => {
+  const arr_en = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+  const start = arr_en.indexOf(array[0])
+  return arr_en.splice(start, start + array.length).find(el => !array.includes(el))
+
+
+
 }
 
 
