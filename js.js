@@ -164,14 +164,19 @@
 //
 // console.log(findMissingLetter(['a','b','c','d','f']))
 
-const findMissingLetter = (array) => {
-  const arr_en = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-  const start = arr_en.indexOf(array[0])
-  return arr_en.splice(start, start + array.length).find(el => !array.includes(el))
+// const findMissingLetter = (array) => {
+//   const arr_en = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+//   const start = arr_en.indexOf(array[0])
+//   return arr_en.splice(start, start + array.length).find(el => !array.includes(el))
+//
+//
+//
+// }
+//
+//
+// console.log(findMissingLetter(['a','b','c','d','f']))
 
 
+const anagram = (str1, str2) => str1.split('').sort().join('') === str2.split('').sort().join('')
 
-}
-
-
-console.log(findMissingLetter(['a','b','c','d','f']))
+console.log(anagram('лось', 'соль'))
