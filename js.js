@@ -217,10 +217,18 @@
 //
 // console.log(factorial(5))
 
-const factorial = (num) => {
-  if (num) {
-    return num * factorial(num - 1)
-  } return 1
+// const factorial = (num) => {
+//   if (num) {
+//     return num * factorial(num - 1)
+//   } return 1
+// }
+//
+// console.log(factorial(5))
+
+const sumNumbers = (arr) => {
+  if (arr.length === 1) {
+    return arr[0]
+  } return arr.pop() + sumNumbers(arr)
 }
 
-console.log(factorial(5))
+console.log(sumNumbers([1, 3, 4, 2, 2]))
