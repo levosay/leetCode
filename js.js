@@ -177,6 +177,14 @@
 // console.log(findMissingLetter(['a','b','c','d','f']))
 
 
-const anagram = (str1, str2) => str1.split('').sort().join('') === str2.split('').sort().join('')
+// const anagram = (str1, str2) => str1.split('').sort().join('') === str2.split('').sort().join('')
+//
+// console.log(anagram('лось', 'соль'))
 
-console.log(anagram('лось', 'соль'))
+const onlyUnique = (array) => {
+  return array.filter((elem, index, self) => self.indexOf(elem) === index)
+
+}
+
+
+console.log(onlyUnique([2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
