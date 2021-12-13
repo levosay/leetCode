@@ -181,10 +181,15 @@
 //
 // console.log(anagram('лось', 'соль'))
 
-const onlyUnique = (array) => {
-  return array.filter((elem, index, self) => self.indexOf(elem) === index)
+// const onlyUnique = (array) => {
+//   return array.filter((elem, index, self) => self.indexOf(elem) === index)
+//
+// }
+//
+//
+// console.log(onlyUnique([0, 2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
 
-}
 
+const onlyUnique = (array) => [...new Set(array)]
 
-console.log(onlyUnique([2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
+console.log(onlyUnique([0, 2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
