@@ -194,15 +194,25 @@
 //
 // console.log(onlyUnique([0, 2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
 
-const solution = (number) => {
-  let result = 0
-  for (let i = 0; i < number; i++) {
-    if (i % 3 === 0 || i % 5 === 0) {
-      result = result + i
-    }
+// const solution = (number) => {
+//   let result = 0
+//   for (let i = 0; i < number; i++) {
+//     if (i % 3 === 0 || i % 5 === 0) {
+//       result += i
+//     }
+//   }
+//   return result
+// }
+//
+//
+// console.log(solution(10))
+
+const factorial = (num) => {
+  let sum = 1
+  for (let i = 1; i <= num; i++) {
+    sum *= i
   }
-  return result
+  return sum
 }
 
-
-console.log(solution(10))
+console.log(factorial(5))
