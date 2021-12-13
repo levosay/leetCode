@@ -190,6 +190,19 @@
 // console.log(onlyUnique([0, 2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
 
 
-const onlyUnique = (array) => [...new Set(array)]
+// const onlyUnique = (array) => [...new Set(array)]
+//
+// console.log(onlyUnique([0, 2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
 
-console.log(onlyUnique([0, 2, 1, 1, 11, 2, 6, 33, 2, 5, 1, 0]))
+const solution = (number) => {
+  let result = 0
+  for (let i = 0; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      result = result + i
+    }
+  }
+  return result
+}
+
+
+console.log(solution(10))
