@@ -207,12 +207,20 @@
 //
 // console.log(solution(10))
 
+// const factorial = (num) => {
+//   let sum = 1
+//   for (let i = 1; i <= num; i++) {
+//     sum *= i
+//   }
+//   return sum
+// }
+//
+// console.log(factorial(5))
+
 const factorial = (num) => {
-  let sum = 1
-  for (let i = 1; i <= num; i++) {
-    sum *= i
-  }
-  return sum
+  if (num) {
+    return num * factorial(num - 1)
+  } return 1
 }
 
 console.log(factorial(5))
