@@ -225,10 +225,21 @@
 //
 // console.log(factorial(5))
 
-const sumNumbers = (arr) => {
-  if (arr.length === 1) {
-    return arr[0]
-  } return arr.pop() + sumNumbers(arr)
+// const sumNumbers = (arr) => {
+//   if (arr.length === 1) {
+//     return arr[0]
+//   } return arr.pop() + sumNumbers(arr)
+// }
+//
+// console.log(sumNumbers([1, 3, 4, 2, 2]))
+
+const arr = [7, 1, 5, 4, 4, 1, 2, 0, 6, 7, 4, 8, 7, 4, 5, 2]
+
+const sortArray = (art) => {
+  return art.reduce((acc, el) => {
+    acc[el] = (acc[el] || 0) + 1
+    return acc
+  }, {})
 }
 
-console.log(sumNumbers([1, 3, 4, 2, 2]))
+console.log(sortArray(arr))
