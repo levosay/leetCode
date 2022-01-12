@@ -244,12 +244,16 @@
 //
 // console.log(sortArray(arr))
 
-function generateIntegers(n) {
-  const result = []
-  for (let i = 0; i <= n; i++) {
-    result.push(i)
-  }
-  return result
-}
+// function generateIntegers(n) {
+//   const result = []
+//   for (let i = 0; i <= n; i++) {
+//     result.push(i)
+//   }
+//   return result
+// }
+//
+// generateIntegers(4)
 
-generateIntegers(4)
+const generateIntegers = (n) => [...Array(n + 1).keys()]
+
+console.log(generateIntegers(4))
