@@ -233,13 +233,23 @@
 //
 // console.log(sumNumbers([1, 3, 4, 2, 2]))
 
-const arr = [7, 1, 5, 4, 4, 1, 2, 0, 6, 7, 4, 8, 7, 4, 5, 2]
+// const arr = [7, 1, 5, 4, 4, 1, 2, 0, 6, 7, 4, 8, 7, 4, 5, 2]
+//
+// const sortArray = (art) => {
+//   return art.reduce((acc, el) => {
+//     acc[el] = (acc[el] || 0) + 1
+//     return acc
+//   }, {})
+// }
+//
+// console.log(sortArray(arr))
 
-const sortArray = (art) => {
-  return art.reduce((acc, el) => {
-    acc[el] = (acc[el] || 0) + 1
-    return acc
-  }, {})
+function generateIntegers(n) {
+  const result = []
+  for (let i = 0; i <= n; i++) {
+    result.push(i)
+  }
+  return result
 }
 
-console.log(sortArray(arr))
+generateIntegers(4)
